@@ -16,51 +16,6 @@
   >
 Add Server
 </button>
-<!-- <p>{{allowNewServer}}</p> --> <!--//interpolation-->
-<!-- <p [innerHTML]="allowNewServer"></p> --> <!--//propertyBinding-->
-
-<p>{{allowNewServer}}</p>
-<p>{{serverCreationStatus}}</p>
-
-<app-server></app-server>
-<app-server></app-server>
-<app-server></app-server>
-
+<p *ngIf="serverCreated">Server was created. Server Name is {{ serverName }}</p>
 <hr>
-
-<button class="btn btn-primary"
-        [disabled]="buttonOff"
-        (click)="onClickClear()"
->
-Clear
-</button>
-<input type="text"
-       class="form-control"
-       (input)="onUpdateUserName($event)"
-       />
-<p>{{userName}}</p>
-
-
-<div class="container">
-  <div class="row">
-      <label>UserName</label>
-      <input type="text"
-             class="form-control"
-             [(ngModel)]="userName2"
-      />
-      <p>{{ userName2 }}</p>
-      <button
-          class="btn btn-primary"
-          [disabled]="userName2 === ''"
-          (click)="userName2 = ''"
-      >
-        Rest User
-      </button>
-  </div>
-</div>
-
-<hr>
-
-
-
-
+<app-server *ngFor="let server of servers"></app-server>

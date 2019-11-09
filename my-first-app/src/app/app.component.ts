@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   // styles: ['h3{color:blue;}'],
   styles: [`
     h3 {
-      color: yellow;
+      color: #337ab7;
     }
   `]
 })

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-servers',
   templateUrl: './servers.component.html',
-  //template: '<app-server></app-server><app-server></app-server><app-server></app-server>',
+  // template: '<app-server></app-server><app-server></app-server><app-server></app-server>',
   // template: `
   //  <app-server></app-server>
   //  <app-server></app-server>
@@ -12,13 +12,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
-
+  serverCreated = false;
   allowNewServer = false;
   serverCreationStatus = 'No Server was created.';
   serverName = 'Test';
-  userName = '';
-  userName2 = '';
-  buttonOff = true;
+  servers = ['TestServer', 'TestServer2'];
 
   constructor() {
     setTimeout(() => {
@@ -31,24 +29,15 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer() {
+    this.serverCreated = true;
+    this.servers.push(this.serverName);
     this.serverCreationStatus = 'Server was created. Name is ' + this.serverName;
   }
 
-  onUpdateServerName(event: any) {
+  onUpdateServerName(event: Event) {
     // console.log(event);
-    this.serverName = (<HTMLInputElement>event.target).value;
+    // this.serverName = (<HTMLInputElement>event.target).value;
+    this.serverCreated = false;
+    this.serverName = (event.target as HTMLInputElement).value;
   }
-
-  onUpdateUserName(event: Event){
-    this.userName = (<HTMLInputElement>event.target).value;
-    this.buttonOff = this.userName !== '' ? false : true;
-  }
-
-  onClickClear() {
-    this.userName = '';
-  }
-
-
-
-
 }
