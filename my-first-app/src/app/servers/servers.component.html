@@ -1,7 +1,7 @@
-<input type="text"
+<!-- <input type="text"
        class="form-control"
       (input)="onUpdateServerName($event)"
-      />
+      /> -->
 
 <input type="text"
        class="form-control"
@@ -25,5 +25,42 @@ Add Server
 <app-server></app-server>
 <app-server></app-server>
 <app-server></app-server>
+
+<hr>
+
+<button class="btn btn-primary"
+        [disabled]="buttonOff"
+        (click)="onClickClear()"
+>
+Clear
+</button>
+<input type="text"
+       class="form-control"
+       (input)="onUpdateUserName($event)"
+       />
+<p>{{userName}}</p>
+
+
+<div class="container">
+  <div class="row">
+      <label>UserName</label>
+      <input type="text"
+             class="form-control"
+             [(ngModel)]="userName2"
+      />
+      <p>{{ userName2 }}</p>
+      <button
+          class="btn btn-primary"
+          [disabled]="userName2 === ''"
+          (click)="userName2 = ''"
+      >
+        Rest User
+      </button>
+  </div>
+</div>
+
+<hr>
+
+
 
 
