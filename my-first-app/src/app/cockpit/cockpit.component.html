@@ -13,7 +13,12 @@
   <div class="row">
     <div class="col-md-12">
       <label for="content" class="form-label">Server Content</label>
-      <input type="text" id="content" class="form-control" [(ngModel)]="newServerContent">
+      <!-- <input type="text" id="content" class="form-control" [(ngModel)]="newServerContent"> -->
+      <input
+        type="text"
+        id="content"
+        class="form-control"
+        #serverContentInput>
     </div>
   </div>
 
