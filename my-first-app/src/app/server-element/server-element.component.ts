@@ -8,7 +8,9 @@ import { Component,
   AfterContentChecked,
   AfterViewInit,
   AfterViewChecked,
-  OnDestroy
+  OnDestroy,
+  ViewChild,
+  ElementRef
  } from '@angular/core';
 
 // tslint:disable-next-line: no-conflicting-lifecycle
@@ -25,12 +27,15 @@ export class ServerElementComponent implements OnInit {
   @Input('srvElement') element: {type: string, name: string, content: string};
   @Input() name: string;
 
+  @ViewChild('heading', {static: true}) header: ElementRef;
+
   constructor() {
     console.log('constructor called');
   }
 
   ngOnInit() {
     console.log('ngOnInit called');
+    console.log('Test content:  ' + this.header.nativeElement.textContent);
   }
 
   // tslint:disable-next-line: use-lifecycle-interface
@@ -54,8 +59,10 @@ export class ServerElementComponent implements OnInit {
     console.log('ngAfterContentChecked called');
   }
 
-  ngAfterCViewInit() {
+  // tslint:disable-next-line: use-lifecycle-interface
+  ngAfterViewInit() {
     console.log('ngAfterViewInit called');
+    console.log('Test content:  ' + this.header.nativeElement.textContent);
   }
 
   // tslint:disable-next-line: use-lifecycle-interface
