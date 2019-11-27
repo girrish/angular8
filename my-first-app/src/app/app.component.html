@@ -51,6 +51,12 @@
       </ul>
       <p appBasicHighlight>This is basic highlight directive.</p>
       <p appBetterHighlightDirective defaultColor="yellow" highlightColor="red">This is better highlight directive.</p>
+      <div [ngSwitch]="value">
+        <p *ngSwitchCase="5">Value is 5</p>
+        <p *ngSwitchCase="10">Value is 10</p>
+        <p *ngSwitchCase="15">Value is 15</p>
+        <p *ngSwitchDefault>Value is Default</p>
+      </div>
     </div>
   </div>
 </div>
