@@ -27,9 +27,21 @@
             {{number}}
           </li>
         </div>
+        <br>
+        <ng-template [ngIf]="!onlyOdd">
+            <div>
+                <li class="list-group-item"
+                *ngFor="let number of oddNumbers"
+                [ngClass]="{odd: number % 2 !== 0}"
+                [ngStyle]="{backgroundColor: number % 2 !== 0 ? 'yellow' : 'transparent'}"
+                >
+                  {{number}}
+                </li>
+              </div>
+        </ng-template>
       </ul>
       <p appBasicHighlight>This is basic highlight directive.</p>
-      <p appBetterHighlightDirective defaultColor="yellow" [highlightColor]="'red'">This is better highlight directive.</p>
+      <p appBetterHighlightDirective defaultColor="yellow" highlightColor="red">This is better highlight directive.</p>
     </div>
   </div>
 </div>
