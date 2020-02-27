@@ -32,6 +32,6 @@ export class ServerComponent implements OnInit {
     // this.router.navigate(['servers', this.server.id, 'edit']);
 
     // using relative path as we are on the same page
-    this.router.navigate(['edit'], {relativeTo: this.route});
+    this.router.navigate(['edit'], {relativeTo: this.route, queryParamsHandling: 'preserve'});
   }
 }
