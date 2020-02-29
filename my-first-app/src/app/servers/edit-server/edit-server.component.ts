@@ -34,7 +34,7 @@ export class EditServerComponent implements OnInit {
 
     // tslint:disable-next-line: no-string-literal
     const id = +this.route.snapshot.params['id'];
-console.log('id-->>', id);
+    // console.log('id-->>', id);
     this.server = this.serversService.getServer(id);
     this.serverName = this.server.name;
     this.serverStatus = this.server.status;
