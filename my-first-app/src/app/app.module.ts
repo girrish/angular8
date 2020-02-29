@@ -14,6 +14,8 @@ import { EditServerComponent } from './servers/edit-server/edit-server.component
 import { ServerComponent } from './servers/server/server.component';
 import { ServersService } from './servers/servers.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthGaurd } from './auth-gaurd-service';
+import { AuthService } from './auth-service';
 
 // const appRoutes: Routes = [
 //   { path: '', component: HomeComponent },
@@ -47,7 +49,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     // RouterModule.forRoot(appRoutes)
     AppRoutingModule
   ],
-  providers: [ServersService],
+  providers: [ServersService, AuthGaurd, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

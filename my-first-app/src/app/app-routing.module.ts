@@ -7,10 +7,11 @@ import { EditServerComponent } from './servers/edit-server/edit-server.component
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthGaurd } from './auth-gaurd-service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'servers', component: ServersComponent, children: [
+  { path: 'servers', canActivate: [AuthGaurd], component: ServersComponent, children: [
       { path: ':id', component: ServerComponent },
       { path: ':id/edit', component: EditServerComponent }
     ]
