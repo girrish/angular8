@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
@@ -16,6 +15,8 @@ import { ServersService } from './servers/servers.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGaurd } from './auth-gaurd-service';
 import { AuthService } from './auth-service';
+import { CanDeactivateGuard } from './servers/edit-server/can-deactivate-guard.service';
+
 
 // const appRoutes: Routes = [
 //   { path: '', component: HomeComponent },
@@ -49,7 +50,7 @@ import { AuthService } from './auth-service';
     // RouterModule.forRoot(appRoutes)
     AppRoutingModule
   ],
-  providers: [ServersService, AuthGaurd, AuthService],
+  providers: [ServersService, AuthGaurd, AuthService, CanDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
